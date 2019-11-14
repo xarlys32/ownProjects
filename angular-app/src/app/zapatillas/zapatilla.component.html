@@ -1,8 +1,21 @@
 <p>Añadir zapatilla</p>
 <input type="text" [(ngModel)] = "mi_marca"/>
+<button (click)="getMarca()">Mostrar</button>
+<button (click)="addMarca()">Añadir marca</button>
+<p>{{mi_marca}}</p>
+<ul>
+    <li *ngFor="let marca of marcas">{{marca}}</li>
+</ul>
 <ul>
     <li *ngFor="let zapatilla of zapatillas">{{zapatilla.nombre}} - {{zapatilla.modelo}}
     <span *ngIf="zapatilla.precio < 150" [ngStyle]= "{'background' : 'blue'}">Ofertaaa</span>
 </li>
 </ul>
-<p>Funciona?</p>
+<input type="text" [(ngModel)]="color"/>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'">El texto es <span [ngStyle]="{'background' : color}">rojo</span></li>
+    <li *ngSwitchCase="'blue'">El texto es <span [ngStyle]="{'background' : color}">azul</span></li>
+    <li *ngSwitchCase="'yellow'">El texto es <span [ngStyle]="{'background' : color}">amarillo</span></li>
+    <li *ngSwitchCase="'orange'">El texto es <span [ngStyle]="{'background' : color}">naranja</span></li>
+    <li *ngSwitchDefault>El texto por defecto</li>
+</ul>

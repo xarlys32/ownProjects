@@ -11,6 +11,7 @@ export class ZapatillaComponent {
     public zapatillas : Array<Zapatilla>;
     public marcas : String[];
     public mi_marca : string;
+    public color: string;
     constructor() {
         this.zapatillas = [new Zapatilla('Adidas', 'Air', 129)
         ,new Zapatilla('Nike', 'Jordan', 300)];
@@ -30,5 +31,14 @@ export class ZapatillaComponent {
       this.zapatillas.forEach((value, index) => {
         this.marcas.push(value.nombre);
       });
+    }
+
+    getMarca() {
+      alert(this.mi_marca);
+    }
+
+    addMarca() {
+      this.marcas.push(this.mi_marca);
+      console.log(this.marcas);
     }
 }

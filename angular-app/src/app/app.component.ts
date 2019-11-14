@@ -10,6 +10,7 @@ export class AppComponent {
   title_app = 'Alegra esa cara!';
   public mostrar_zapatilla: boolean = true;
   public Config;
+  
 
   ngOnInit(): void {
     this.Config = Configuracion;
@@ -18,4 +19,5 @@ export class AppComponent {
   public ocultarZaptillas(value) {
     this.mostrar_zapatilla = value;
   }
+
 }
