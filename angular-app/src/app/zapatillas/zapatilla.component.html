@@ -4,14 +4,16 @@
 <button (click)="addMarca()">Añadir marca</button>
 <p>{{mi_marca}}</p>
 <ul>
-    <li *ngFor="let marca of marcas">{{marca}}</li>
+    <li *ngFor="let marca of marcas; let i = index">{{i}} - {{marca}}
+        <button (click)="eliminarMarca(i)">Eliminar</button>
+    </li>
 </ul>
 <ul>
     <li *ngFor="let zapatilla of zapatillas">{{zapatilla.nombre}} - {{zapatilla.modelo}}
     <span *ngIf="zapatilla.precio < 150" [ngStyle]= "{'background' : 'blue'}">Ofertaaa</span>
 </li>
 </ul>
-<input type="text" [(ngModel)]="color"/>
+<input type="text" [(ngModel)]="color" (keyup.enter)="onEnter()"/>
 <ul [ngSwitch]="color">
     <li *ngSwitchCase="'red'">El texto es <span [ngStyle]="{'background' : color}">rojo</span></li>
     <li *ngSwitchCase="'blue'">El texto es <span [ngStyle]="{'background' : color}">azul</span></li>

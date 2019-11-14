@@ -41,4 +41,12 @@ export class ZapatillaComponent {
       this.marcas.push(this.mi_marca);
       console.log(this.marcas);
     }
+
+    eliminarMarca(i) {
+        this.marcas.splice(i);
+    }
+
+    onEnter() {
+      console.log("Pulso enter!!");
+    }
 }
