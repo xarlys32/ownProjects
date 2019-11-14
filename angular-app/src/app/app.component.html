@@ -1,0 +1,7 @@
+<div [ngStyle]="{'background': Config.background}">
+<h1>Welcome to Angular-App</h1>
+<h3>{{title_app}}</h3>
+<button (click)='ocultarZaptillas(false)'>Oculta</button>
+<button (click)='ocultarZaptillas(true)'>Muestra</button>
+<zapatilla-componente *ngIf="mostrar_zapatilla"></zapatilla-componente>
+</div>

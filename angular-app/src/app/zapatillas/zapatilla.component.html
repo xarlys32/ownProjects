@@ -1,0 +1,8 @@
+<p>Añadir zapatilla</p>
+<input type="text" [(ngModel)] = "mi_marca"/>
+<ul>
+    <li *ngFor="let zapatilla of zapatillas">{{zapatilla.nombre}} - {{zapatilla.modelo}}
+    <span *ngIf="zapatilla.precio < 150" [ngStyle]= "{'background' : 'blue'}">Ofertaaa</span>
+</li>
+</ul>
+<p>Funciona?</p>
