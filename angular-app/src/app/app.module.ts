@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { ZapatillaComponent } from './zapatillas/zapatilla.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ZapatillaComponent, HomeComponent
+    AppComponent, ZapatillaComponent, HomeComponent, CursosComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +18,6 @@ import { HomeComponent } from './home/home.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, ZapatillaComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

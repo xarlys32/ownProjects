@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ZapatillaComponent } from './zapatillas/zapatilla.component';
 import { HomeComponent } from './home/home.component';
 //import { ModuleWithProviders} from '@angular/core';
+import { CursosComponent } from './cursos/cursos.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'zapatillas', component: ZapatillaComponent},
+  {path: 'cursos', component: CursosComponent},
+  {path: 'cursos/:nombre', component: CursosComponent},
+  {path: 'cursos/:nombre/:followers', component: CursosComponent},
   {path:'**', component: HomeComponent}
 ];
 

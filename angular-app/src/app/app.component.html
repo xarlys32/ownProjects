@@ -3,6 +3,16 @@
 <h3>{{title_app}}</h3>
 <!--<button (click)='ocultarZaptillas(false)'>Oculta</button>
 <button (click)='ocultarZaptillas(true)'>Muestra</button>-->
+
+<nav>
+    <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatillas']" [routerLinkActive]="['activado']">Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']" [routerLinkActive]="['activado']">Cursos</a>
+</nav>
+<hr/>
+
 <router-outlet></router-outlet>
 <!--<zapatilla-componente *ngIf="mostrar_zapatilla"></zapatilla-componente>-->
 </div>
