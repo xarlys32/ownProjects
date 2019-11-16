@@ -14,7 +14,7 @@ export class ZapatillaComponent {
     public color: string;
     constructor() {
         this.zapatillas = [new Zapatilla('Adidas', 'Air', 129)
-        ,new Zapatilla('Nike', 'Jordan', 300)];
+        ,new Zapatilla('Nike', 'Jordan', 300), new Zapatilla('Vans', 'Skater', 80)];
         this.marcas = new Array();
         console.log(this.zapatillas);
     }

@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ZapatillaComponent } from './zapatillas/zapatilla.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ZapatillaComponent
+    AppComponent, ZapatillaComponent, HomeComponent
   ],
   imports: [
     BrowserModule,

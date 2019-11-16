@@ -9,8 +9,16 @@
     </li>
 </ul>
 <ul>
-    <li *ngFor="let zapatilla of zapatillas">{{zapatilla.nombre}} - {{zapatilla.modelo}}
-    <span *ngIf="zapatilla.precio < 150" [ngStyle]= "{'background' : 'blue'}">Ofertaaa</span>
+    <li *ngFor="let zapatilla of zapatillas">
+        <!--<span [class.altoPrecio]="zapatilla.precio >= 100">-->
+        <span [class.altoPrecio]="zapatilla.precio >= 100"
+        [ngClass]="{
+            'fondoRojo' : zapatilla.precio >= 100,
+            'subrayado' : zapatilla.nombre == 'Nike'
+        }">
+            {{zapatilla.nombre}} - {{zapatilla.modelo}} 
+        </span>
+    <span *ngIf="zapatilla.precio < 100" [ngStyle]= "{'background' : 'blue'}">Ofertaaa</span>
 </li>
 </ul>
 <input type="text" [(ngModel)]="color" (keyup.enter)="onEnter()"/>
