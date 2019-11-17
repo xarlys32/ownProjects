@@ -4,6 +4,7 @@ import { ZapatillaComponent } from './zapatillas/zapatilla.component';
 import { HomeComponent } from './home/home.component';
 //import { ModuleWithProviders} from '@angular/core';
 import { CursosComponent } from './cursos/cursos.component';
+import { ExternoComponent } from './externo/externo.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'cursos', component: CursosComponent},
   {path: 'cursos/:nombre', component: CursosComponent},
   {path: 'cursos/:nombre/:followers', component: CursosComponent},
+  {path: 'externo', component: ExternoComponent},
   {path:'**', component: HomeComponent}
 ];
 

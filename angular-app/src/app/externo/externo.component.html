@@ -1,0 +1,5 @@
+<p>externo works!</p>
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
+<div *ngIf="user">
+    <h3>{{user.first_name}} {{user.last_name}}</h3>
+</div>

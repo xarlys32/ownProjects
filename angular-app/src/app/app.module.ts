@@ -7,15 +7,17 @@ import { ZapatillaComponent } from './zapatillas/zapatilla.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CursosComponent } from './cursos/cursos.component';
-
+import { ExternoComponent } from './externo/externo.component';
+import { HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
-    AppComponent, ZapatillaComponent, HomeComponent, CursosComponent
+    AppComponent, ZapatillaComponent, HomeComponent, CursosComponent, ExternoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

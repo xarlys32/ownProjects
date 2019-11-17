@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Zapatilla } from './zapatilla';
 import { FormsModule } from '@angular/forms';
+import { ZapatillaService } from '../service/zapatilla.service';
 
 @Component({
   selector: 'zapatilla-componente',
-  templateUrl: './zapatilla.component.html'
+  templateUrl: './zapatilla.component.html',
+  providers: [ZapatillaService]
 })
 
 export class ZapatillaComponent {
@@ -12,14 +14,14 @@ export class ZapatillaComponent {
     public marcas : String[];
     public mi_marca : string;
     public color: string;
-    constructor() {
-        this.zapatillas = [new Zapatilla('Adidas', 'Air', 129)
-        ,new Zapatilla('Nike', 'Jordan', 300), new Zapatilla('Vans', 'Skater', 80)];
-        this.marcas = new Array();
-        console.log(this.zapatillas);
+    constructor(
+      private _zapatillaService: ZapatillaService
+    ) {
+      this.marcas = new Array();
     }
 
     ngOnInit(): void {
+      this.zapatillas= this._zapatillaService.getZapatillas();
       this.establecerMarcas();
       console.log(this.marcas);
     }
