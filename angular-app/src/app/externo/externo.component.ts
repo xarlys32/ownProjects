@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeticionesService } from '../service/peticiones.service';
+import { CalculadoraPipe } from '../pipes/calculadora.pipe';
 
 @Component({
   selector: 'app-externo',
@@ -10,12 +11,13 @@ import { PeticionesService } from '../service/peticiones.service';
 export class ExternoComponent implements OnInit {
   public user: any;
   public userId:any;
+  public fecha: Date;
   constructor(
     private _peticionesService: PeticionesService
   ) { }
 
   ngOnInit() {
-    
+    this.fecha = new Date();
   }
 
   cargarUsuario() {

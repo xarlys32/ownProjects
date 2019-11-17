@@ -1,4 +1,7 @@
 <p>externo works!</p>
+{{fecha | date: 'dd/MM/yyyy'}}
+{{4 | calculadora: 7}}
+<hr/>
 <input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
 <div *ngIf="user">
     <h3>{{user.first_name}} {{user.last_name}}</h3>
