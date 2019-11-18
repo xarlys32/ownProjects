@@ -1,5 +1,5 @@
 <p>contacto works!</p>
-<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+<form #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)">
     <label for="lbNombre">Nombre</label><br/>
     <input type="text" name="lbNombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" required="true"/>
     <span *ngIf="nombre.touched && !nombre.valid">
@@ -15,5 +15,5 @@
     <label for="lbMensaje">Mensaje</label><br/>
     <textarea name="lbMensaje" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea>
     <br/>
-    <input type="submit" value="Enviar"/>
+    <input type="submit" value="Enviar" [disabled]="!formContacto.form.valid"/>
 </form>
