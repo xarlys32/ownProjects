@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ExternoComponent } from './externo/externo.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CalculadoraPipe } from './pipes/calculadora.pipe';
+import { ContactoComponent } from './contacto/contacto.component';
 @NgModule({
   declarations: [
     AppComponent, ZapatillaComponent, HomeComponent, CursosComponent, ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
