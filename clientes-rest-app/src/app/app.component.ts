@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'clientes-rest-app';
+  title = 'clientes-app';
+  public mostrar: boolean = true;
+  public cursos: string[] = ['C#', 'Java', 'PHP', 'Angular'];
+
 }
