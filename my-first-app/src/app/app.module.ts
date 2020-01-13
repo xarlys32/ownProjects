@@ -11,6 +11,8 @@ import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipe
 import { FormsModule } from '@angular/forms';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { IngredientService } from './recipes/ingredient.service';
+import { RecipesService } from './recipes/recipes.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DropdownDirective } from './directives/dropdown.directive';
     FormsModule
   ],
   providers: [
-    DropdownDirective
+    DropdownDirective,
+    IngredientService,
+    RecipesService
   ],
   bootstrap: [AppComponent]
 })
