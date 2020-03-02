@@ -13,6 +13,9 @@ import { BetterHighlightDirective } from './directives/better-highlight.directiv
 import { DropdownDirective } from './directives/dropdown.directive';
 import { IngredientService } from './recipes/ingredient.service';
 import { RecipesService } from './recipes/recipes.service';
+import { HomeComponent } from './home/home.component';
+import { ShopComponent } from './shop/shop.component';
+import { ItemComponent } from './shop/item/item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { RecipesService } from './recipes/recipes.service';
     RecipesDetailComponent,
     RecipesItemComponent,
     BetterHighlightDirective,
-    DropdownDirective
+    DropdownDirective,
+    HomeComponent,
+    ShopComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
