@@ -1,3 +1,4 @@
+
 <div class="container" style="padding-top: 5%;">
 <div *ngFor="let recipe of recipes">
   <div class="card" >
@@ -10,7 +11,9 @@
             {{ingredient.name}}
           </li>
         </ul>
-        <button class="btn btn-success" (click)="details(recipe)">Details</button>
+        <button class="btn btn-success" (click)="details(recipe)">Add</button>
+        <br/>
+        <a [routerLink]="[ 'details', recipe.id ]">Details</a>
       </div>
       <div class="float-right">
         <img [src]="recipe.img" class="img-responsive" style="max-height: 100px;">

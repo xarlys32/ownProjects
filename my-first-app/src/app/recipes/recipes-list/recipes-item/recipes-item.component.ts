@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-item',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesItemComponent implements OnInit {
 
-  constructor() { }
+  public id: number;
+  constructor(public route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = +this.route.snapshot.params['id'];
   }
+
+
 
 }

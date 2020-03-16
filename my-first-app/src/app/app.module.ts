@@ -16,6 +16,8 @@ import { RecipesService } from './recipes/recipes.service';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
+import { ItemService } from './shop/item.service';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ItemComponent } from './shop/item/item.component';
   providers: [
     DropdownDirective,
     IngredientService,
-    RecipesService
+    RecipesService,
+    ItemService
   ],
   bootstrap: [AppComponent]
 })
