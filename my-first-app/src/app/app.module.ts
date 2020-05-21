@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { ItemService } from './shop/item.service';
+import { DecimalvalidaitonDirective } from './directives/decimalvalidaiton-directive.directive';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ItemService } from './shop/item.service';
     DropdownDirective,
     HomeComponent,
     ShopComponent,
-    ItemComponent
+    ItemComponent,
+    DecimalvalidaitonDirective
   ],
   imports: [
     BrowserModule,
