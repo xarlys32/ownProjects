@@ -18,6 +18,8 @@ import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { ItemService } from './shop/item.service';
 import { DecimalvalidaitonDirective } from './directives/decimalvalidaiton-directive.directive';
+import { GraphComponent } from './graph/graph.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -33,12 +35,14 @@ import { DecimalvalidaitonDirective } from './directives/decimalvalidaiton-direc
     HomeComponent,
     ShopComponent,
     ItemComponent,
-    DecimalvalidaitonDirective
+    DecimalvalidaitonDirective,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxChartsModule
   ],
   providers: [
     DropdownDirective,

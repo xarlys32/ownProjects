@@ -5,6 +5,7 @@ import { RecipesListComponent } from './recipes/recipes-list/recipes-list.compon
 import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
+import { GraphComponent } from './graph/graph.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     path: 'shopping', component: ShopComponent, children: [
       { path: 'item', component: ItemComponent }
     ]
-  }
+  },
+  { path: 'graph', component: GraphComponent }
 ];
 
 @NgModule({
