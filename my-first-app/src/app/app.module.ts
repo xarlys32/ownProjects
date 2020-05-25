@@ -20,6 +20,10 @@ import { ItemService } from './shop/item.service';
 import { DecimalvalidaitonDirective } from './directives/decimalvalidaiton-directive.directive';
 import { GraphComponent } from './graph/graph.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { GameControllComponent } from './databinding/game-controll/game-controll.component';
+import { OddComponent } from './databinding/odd/odd.component';
+import { EvenComponent } from './databinding/even/even.component';
+import { ManageBindingComponent } from './databinding/manage-binding/manage-binding.component';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     ShopComponent,
     ItemComponent,
     DecimalvalidaitonDirective,
-    GraphComponent
+    GraphComponent,
+    GameControllComponent,
+    OddComponent,
+    EvenComponent,
+    ManageBindingComponent
   ],
   imports: [
     BrowserModule,

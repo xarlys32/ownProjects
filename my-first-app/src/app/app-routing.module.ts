@@ -6,6 +6,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ItemComponent } from './shop/item/item.component';
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { GraphComponent } from './graph/graph.component';
+import { ManageBindingComponent } from './databinding/manage-binding/manage-binding.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'item', component: ItemComponent }
     ]
   },
-  { path: 'graph', component: GraphComponent }
+  { path: 'graph', component: GraphComponent },
+  { path: 'manage_binding', component: ManageBindingComponent }
 ];
 
 @NgModule({
