@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Recipes } from './recipes.model';
 import { Ingredient } from './Ingredients.model';
 
-@Injectable()
+//@Injectable() -> Solo usamos Injectable cuando tenemos que meter un servicio en otro servicio u elemento sin metadata(@Component..)
 export class IngredientService {
 
     public newIngredient = new EventEmitter<Ingredient>()
