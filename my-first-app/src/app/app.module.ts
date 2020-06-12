@@ -24,6 +24,10 @@ import { GameControllComponent } from './databinding/game-controll/game-controll
 import { OddComponent } from './databinding/odd/odd.component';
 import { EvenComponent } from './databinding/even/even.component';
 import { ManageBindingComponent } from './databinding/manage-binding/manage-binding.component';
+import { ObservableExampleComponent } from './rxjs/observables/observable-example/observable-example.component';
+import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
+import { RxjsContainerComponent } from './rxjs/rxjs-container/rxjs-container.component';
+import { SubjectService } from './rxjs/subject-demo.service';
 
 
 @NgModule({
@@ -44,7 +48,10 @@ import { ManageBindingComponent } from './databinding/manage-binding/manage-bind
     GameControllComponent,
     OddComponent,
     EvenComponent,
-    ManageBindingComponent
+    ManageBindingComponent,
+    ObservableExampleComponent,
+    SubjectExampleComponent,
+    RxjsContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,8 @@ import { ManageBindingComponent } from './databinding/manage-binding/manage-bind
     DropdownDirective,
     IngredientService,
     RecipesService,
-    ItemService
+    ItemService,
+    SubjectService
   ],
   bootstrap: [AppComponent]
 })
