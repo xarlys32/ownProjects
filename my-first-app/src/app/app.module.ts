@@ -28,6 +28,7 @@ import { ObservableExampleComponent } from './rxjs/observables/observable-exampl
 import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
 import { RxjsContainerComponent } from './rxjs/rxjs-container/rxjs-container.component';
 import { SubjectService } from './rxjs/subject-demo.service';
+import { TemplateFormComponent } from './form/template-form/template-form.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { SubjectService } from './rxjs/subject-demo.service';
     ManageBindingComponent,
     ObservableExampleComponent,
     SubjectExampleComponent,
-    RxjsContainerComponent
+    RxjsContainerComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,

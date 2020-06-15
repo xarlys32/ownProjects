@@ -10,6 +10,7 @@ import { ManageBindingComponent } from './databinding/manage-binding/manage-bind
 import { RxjsContainerComponent } from './rxjs/rxjs-container/rxjs-container.component';
 import { ObservableExampleComponent } from './rxjs/observables/observable-example/observable-example.component';
 import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
+import { TemplateFormComponent } from './form/template-form/template-form.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
       { path: 'observables', component: ObservableExampleComponent },
       { path: 'subject', component: SubjectExampleComponent }
     ]
-  }
+  },
+  { path: 'template_form', component: TemplateFormComponent}
 ];
 
 @NgModule({
