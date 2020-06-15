@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-form',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent implements OnInit {
-
+  @ViewChild('f', {static: false}) form: NgForm
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log(this.form)
   }
 
 }
