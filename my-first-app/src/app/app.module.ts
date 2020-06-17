@@ -8,7 +8,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { IngredientService } from './recipes/ingredient.service';
@@ -29,6 +29,7 @@ import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject
 import { RxjsContainerComponent } from './rxjs/rxjs-container/rxjs-container.component';
 import { SubjectService } from './rxjs/subject-demo.service';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -53,12 +54,14 @@ import { TemplateFormComponent } from './form/template-form/template-form.compon
     ObservableExampleComponent,
     SubjectExampleComponent,
     RxjsContainerComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxChartsModule
   ],
   providers: [
