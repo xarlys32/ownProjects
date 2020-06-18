@@ -40,8 +40,10 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <div formArrayName="hobbies" class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" name="exampleInputPassword1" formControlName="exampleInputPassword1" >
+      <button class="btn btn-outline-secondary" (click)="addHobby()">Add Hobby</button>
+      <div *ngFor="let hobbyControl of formGroup.get('hobbies').controls; let i = index">
+        <input type="text" class="form-control" [formControlName]="i">
+      </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
