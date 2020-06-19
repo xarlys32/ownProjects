@@ -8,12 +8,13 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
   formGroup: FormGroup
+  forbiddenNames = ['Anna', 'Peter']
   constructor() { }
 
   ngOnInit() {
     this.formGroup = new FormGroup({
       'useData': new FormGroup({
-        'exName': new FormControl(null, Validators.required),
+        'exName': new FormControl(null, [Validators.required, this.forbiddenNamesValidation.bind(this)]),
         'exSurName': new FormControl(null, Validators.required)
       }),
       'exampleInputEmail1': new FormControl(null, [Validators.required, Validators.email]),
@@ -28,8 +29,15 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   addHobby() {
-    let control =  new FormControl(null)
+    let control = new FormControl(null)
     let hobbies = this.formGroup.get('hobbies') as FormArray
     hobbies.push(control)
+  }
+
+  forbiddenNamesValidation(control: FormControl): { [s: string]: boolean } {
+    if (this.forbiddenNames.indexOf(control.value) !== -1) {
+      return { 'nameIsForbidden': true }
+    }
+    return null
   }
 }

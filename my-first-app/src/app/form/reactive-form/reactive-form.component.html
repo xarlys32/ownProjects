@@ -7,15 +7,20 @@
         <input type="text" 
         class="form-control" 
         name="exName"
+        required
         formControlName="exName" >
       </div>
-      <small *ngIf="!formGroup.get('useData.exName').valid && formGroup.get('useData.exName').touched"  class="form-text" style="color:  red">Username can't be empty</small>
+      <span *ngIf="!formGroup.get('useData.exName').valid && formGroup.get('useData.exName').touched">
+        <small *ngIf="formGroup.get('useData.exName').errors['nameIsForbidden']"  class="form-text" style="color:  red">Name invalid</small>
+        <small *ngIf="formGroup.get('useData.exName').errors['required']"  class="form-text" style="color:  red">Username can't be empty</small>
+      </span>
+
       <div class="form-group">
-        <label for="exSurName">Surname</label>
-        <input type="text" 
-        class="form-control" 
-        name="exSurName"
-        formControlName="exSurName"
+      <label for="exSurName">Surname</label>
+      <input type="text" 
+      class="form-control" 
+      name="exSurName"
+      formControlName="exSurName"
         >
       </div>
       <small class="form-text text-muted">*This is a FormGroup</small>
