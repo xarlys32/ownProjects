@@ -1,19 +1,28 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="row">
-                <div class="col-sm-5 form-group"> 
-                    <label>Product</label>
-                    <input type="text" name="product" class="form-control"/>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="row">
+                    <div class="col-sm-5 form-group"> 
+                        <label>Product</label>
+                        <input type="text" name="product" class="form-control" ngModel required/>
+                    </div>
+                    <div class="col-sm-5 form-group">
+                        <label>Price</label>
+                        <input type="number" name="price" class="form-control" 
+                        required ngModel pattern="^\d*(\.\d{0,2})?$"/>
+                    </div>
                 </div>
-                <div class="col-sm-5 form-group">
-                    <label>Amount</label>
-                    <input type="text" name="amount" class="form-control"/>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit" style="margin-right: 2%;">Add</button>
-            <button class="btn btn-success" type="button" style="margin-right: 2%;">Clear</button>
-            <button class="btn btn-danger" type="button" style="margin-right: 2%;">Delete</button>
+                <button class="btn btn-primary" type="submit" style="margin-right: 2%;" [disabled]="!f.valid">Add</button>
+                <button class="btn btn-success" type="button" style="margin-right: 2%;">Clear</button>
+                <button class="btn btn-danger" type="button" style="margin-right: 2%;">Delete</button>
+            </form>
         </div> 
     </div>
+    <hr/>
+    <ul class="list-group">
+        <a class="list-group-item list-group-item-action" *ngFor="let item of items">{{item.name}}</a>
+        
+      </ul>
 </div>
+
