@@ -14,4 +14,12 @@ export class ItemService {
     addItem(item: ItemModel) {
         this.listItem.push(item);
     }
+
+    upDateItem(i: number, item: ItemModel) {
+        this.listItem[i] = item
+    }
+
+    deleteItem(i: number) {
+        this.listItem.splice(i, 1)
+    }
 }

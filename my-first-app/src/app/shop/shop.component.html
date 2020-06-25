@@ -13,16 +13,15 @@
                         required ngModel pattern="^\d*(\.\d{0,2})?$"/>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit" style="margin-right: 2%;" [disabled]="!f.valid">Add</button>
-                <button class="btn btn-success" type="button" style="margin-right: 2%;">Clear</button>
-                <button class="btn btn-danger" type="button" style="margin-right: 2%;">Delete</button>
+                <button class="btn btn-primary" type="submit" style="margin-right: 2%;" [disabled]="!f.valid">{{editMode ? 'Update':'Add'}}</button>
+                <button class="btn btn-success" type="button" style="margin-right: 2%;" (click)="onClear()">Clear</button>
+                <button class="btn btn-danger" type="button" style="margin-right: 2%;" (click)="onDelete(i)">Delete</button>
             </form>
         </div> 
     </div>
     <hr/>
     <ul class="list-group">
-        <a class="list-group-item list-group-item-action" *ngFor="let item of items">{{item.name}}</a>
-        
-      </ul>
+        <a class="list-group-item list-group-item-action" *ngFor="let item of items; let i = index" (click)="onSelectEdit(i, item)">{{item.name}} - {{item.price}}$</a>
+    </ul>
 </div>
 
