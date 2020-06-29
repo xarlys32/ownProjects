@@ -31,6 +31,7 @@ import { TemplateFormComponent } from './form/template-form/template-form.compon
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-left-bar.component';
+import { RecipesNewService } from './recipes-new/recipes-new.service';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-
     IngredientService,
     RecipesService,
     ItemService,
-    SubjectService
+    SubjectService,
+    RecipesNewService
   ],
   bootstrap: [AppComponent]
 })

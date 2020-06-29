@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipesNewService } from '../recipes-new.service';
+import { RecipesNewModel } from '../recipes.model';
 
 @Component({
   selector: 'recipes-left-bar',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes-left-bar.component.css']
 })
 export class RecipesLeftBarComponent implements OnInit {
+  private recipesList: RecipesNewModel[]
 
-  constructor() { }
+  constructor(private recipesServices: RecipesNewService) { }
 
   ngOnInit() {
+    this.recipesServices.getRecipes().subscribe((items) => {
+      this.recipesList = items
+    })
   }
 
 }
