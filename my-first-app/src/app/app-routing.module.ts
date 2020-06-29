@@ -11,12 +11,14 @@ import { ObservableExampleComponent } from './rxjs/observables/observable-exampl
 import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/details/:id', component: RecipesItemComponent },
+  { path: 'recipes-new', component: RecipesNewComponent },
   {
     path: 'shopping', component: ShopComponent
   },
@@ -28,8 +30,8 @@ const routes: Routes = [
       { path: 'subject', component: SubjectExampleComponent }
     ]
   },
-  { path: 'template_form', component: TemplateFormComponent},
-  { path: 'reactive_form', component: ReactiveFormComponent}
+  { path: 'template_form', component: TemplateFormComponent },
+  { path: 'reactive_form', component: ReactiveFormComponent }
 ];
 
 @NgModule({

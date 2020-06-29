@@ -29,6 +29,8 @@ import { RxjsContainerComponent } from './rxjs/rxjs-container/rxjs-container.com
 import { SubjectService } from './rxjs/subject-demo.service';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { RecipesNewComponent } from './recipes-new/recipes-new.component';
+import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-left-bar.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
     SubjectExampleComponent,
     RxjsContainerComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    RecipesNewComponent,
+    RecipesLeftBarComponent
   ],
   imports: [
     BrowserModule,
