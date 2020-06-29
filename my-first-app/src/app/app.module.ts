@@ -32,6 +32,7 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
 import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-left-bar.component';
 import { RecipesNewService } from './recipes-new/recipes-new.service';
+import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { RecipesNewService } from './recipes-new/recipes-new.service';
     TemplateFormComponent,
     ReactiveFormComponent,
     RecipesNewComponent,
-    RecipesLeftBarComponent
+    RecipesLeftBarComponent,
+    RecipesDetailv2Component
   ],
   imports: [
     BrowserModule,

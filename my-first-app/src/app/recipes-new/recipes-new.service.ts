@@ -6,11 +6,22 @@ import { of } from 'rxjs';
 
 @Injectable()
 export class RecipesNewService {
-    private recipes: RecipesNewModel[] = [new RecipesNewModel(1, 'https://images.media-allrecipes.com/userphotos/720x405/630590.jpg', 'Aaaaa', 0, 'Prueba 1'),
-    new RecipesNewModel(2, 'https://images.media-allrecipes.com/userphotos/720x405/1656932.jpg', 'Bbbb', 0, 'Prueba 2')];
+    private recipes: RecipesNewModel[] = [new RecipesNewModel(1, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/12-pequenos-consejos-para-que-comer-pizza-sea-mas-saludable-1527516566.jpg', 'Fucking delicious!', 0, 'Amazing pizza'),
+    new RecipesNewModel(2, 'https://pbs.twimg.com/media/DJmXRCCWsAA5NDs?format=jpg&name=small', 'Heart attack!', 0, 'Brutal burger')];
 
     getRecipes(): Observable<RecipesNewModel[]> {
         return of(this.recipes)
+    }
+
+    getRecipe(id: number): RecipesNewModel {
+        let recipe: RecipesNewModel
+         this.recipes.filter(function(item) {
+            if(item.id == id) {
+                recipe = item
+            }
+        })
+        console.log(recipe)
+        return recipe
     }
 
 }

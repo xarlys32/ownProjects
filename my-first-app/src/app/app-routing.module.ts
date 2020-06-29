@@ -12,13 +12,16 @@ import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject
 import { TemplateFormComponent } from './form/template-form/template-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { RecipesNewComponent } from './recipes-new/recipes-new.component';
+import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/details/:id', component: RecipesItemComponent },
-  { path: 'recipes-new', component: RecipesNewComponent },
+  { path: 'recipes-new', component: RecipesNewComponent, children:[
+    { path: ':id', component: RecipesDetailv2Component },
+  ] },
   {
     path: 'shopping', component: ShopComponent
   },
