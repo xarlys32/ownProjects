@@ -2,9 +2,9 @@
     <div class="col-md-10">
         <ul class="list-group clearfix">
             <li class="list-group-item list-group-item-action" *ngFor="let item of recipesList;let i = index" >
-                <a [routerLink]="item.id" style="cursor: pointer;" routerLinkActive="active">
+                <a [routerLink]="item.id" class="list-group-item list-group-item-action" routerLinkActive="active">
                     <div class="row">
-                         <div class="col-md-6">
+                        <div class="col-md-6">
                             <h4>{{item.name}}</h4>
                             <span>{{item.description}}</span>
                         </div>
