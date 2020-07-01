@@ -1,0 +1,37 @@
+<form [formGroup]="formGroupRecipe" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" rows="3" formControlName="description"></textarea>
+      </div>
+    <div class="form-group">
+        <label for="img">Image</label>
+        <input type="text" class="form-control" name="img" formControlName="img" #imagePre>
+        <img [src]="imagePre.value" width="500" alt="Pre visualation" />
+    </div>
+
+    <div class="form-group">
+        <label for="img">Ingredients</label>
+        
+        <div class="col-xs-12" formArrayName="ingredients">
+            <div class="row" *ngFor="let ingredient of formGroupRecipe.get('ingredients').controls; let i = index" formGroupName="i">
+                <div class="col-sm-5 form-group"> 
+                    <small class="form-text text-muted">Name</small>
+                    <input type="text" class="form-control" name="nameIng" formControlName="name">
+                </div>
+                <div class="col-sm-5 form-group"> 
+                    <small class="form-text text-muted">Amount</small>
+                    <input type="text" class="form-control" name="amount" formControlName="amount">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-secondary" (click)="addIngredient()">Add</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  

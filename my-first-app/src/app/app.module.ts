@@ -33,6 +33,7 @@ import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-left-bar.component';
 import { RecipesNewService } from './recipes-new/recipes-new.service';
 import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
+import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes
     ReactiveFormComponent,
     RecipesNewComponent,
     RecipesLeftBarComponent,
-    RecipesDetailv2Component
+    RecipesDetailv2Component,
+    RecipesFormComponent
   ],
   imports: [
     BrowserModule,

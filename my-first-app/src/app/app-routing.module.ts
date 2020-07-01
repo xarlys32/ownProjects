@@ -13,6 +13,7 @@ import { TemplateFormComponent } from './form/template-form/template-form.compon
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
+import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'recipes/details/:id', component: RecipesItemComponent },
   { path: 'recipes-new', component: RecipesNewComponent, children:[
     { path: ':id', component: RecipesDetailv2Component },
+    { path: ':id/edit', component: RecipesFormComponent },
   ] },
   {
     path: 'shopping', component: ShopComponent

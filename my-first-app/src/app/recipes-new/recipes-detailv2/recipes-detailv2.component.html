@@ -1,1 +1,8 @@
-{{recipe.name}}
+<div class="card" style="width: 40rem;">
+    <img [src]="recipe.img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
+      <a routerLink="edit" class="btn btn-primary">Edit</a>
+    </div>
+  </div>
