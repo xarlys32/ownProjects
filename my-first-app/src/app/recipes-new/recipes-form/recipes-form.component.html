@@ -17,7 +17,8 @@
         <label for="img">Ingredients</label>
         
         <div class="col-xs-12" formArrayName="ingredients">
-            <div class="row" *ngFor="let ingredient of formGroupRecipe.get('ingredients').controls; let i = index" formGroupName="i">
+            <div class="row" *ngFor="let ingredient of formGroupRecipe.get('ingredients').controls; let i = index"
+             [formGroupName]="i">
                 <div class="col-sm-5 form-group"> 
                     <small class="form-text text-muted">Name</small>
                     <input type="text" class="form-control" name="nameIng" formControlName="name">
