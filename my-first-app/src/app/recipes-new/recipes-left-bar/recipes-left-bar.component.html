@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-md-10">
+        <button class="btn btn-info" (click)="onNewRecipe()" >Add Recipe</button>
         <ul class="list-group clearfix">
             <li class="list-group-item list-group-item-action" *ngFor="let item of recipesList;let i = index" >
                 <a [routerLink]="item.id" class="list-group-item list-group-item-action" routerLinkActive="active">

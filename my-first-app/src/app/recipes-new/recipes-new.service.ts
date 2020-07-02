@@ -20,15 +20,29 @@ export class RecipesNewService {
                 recipe = item
             }
         })
-        console.log(recipe)
         return recipe
     }
 
     updateRecipe(recipe: RecipesNewModel) {
-        let index = this.recipes.findIndex((item) => {
-            item.id == recipe.id
-        })
+        let index = this.recipes.findIndex(item => 
+            item.id === recipe.id
+        )
         this.recipes[index] = recipe
+    }
+
+    addRecipe(recipe: RecipesNewModel) {
+        recipe.id = this.getMaxId() + 1
+        this.recipes.push(recipe)
+    }
+
+    getMaxId():number {
+        let idMax:number = 0
+        for (let i of this.recipes.values()) {
+            if (i.id > idMax) {
+                idMax = i.id
+            }
+        }
+        return idMax
     }
 
 }
