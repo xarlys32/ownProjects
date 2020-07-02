@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesNewService } from '../recipes-new.service';
 import { RecipesNewModel } from '../recipes.model';
-import { FormGroup, FormControl, FormControlName, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, FormControlName, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recipes-form',
@@ -24,13 +24,13 @@ export class RecipesFormComponent implements OnInit {
       }
     })
 
-    
+
     let recipeIngredients = new FormArray([])
 
     this.formGroupRecipe = new FormGroup({
-      'name': new FormControl(this.recipe.name),
-      'description': new FormControl(this.recipe.description),
-      'img': new FormControl(this.recipe.img),
+      'name': new FormControl(this.recipe.name, Validators.required),
+      'description': new FormControl(this.recipe.description, Validators.required),
+      'img': new FormControl(this.recipe.img, Validators.required),
       'ingredients': new FormArray([])
     })
 
@@ -42,7 +42,7 @@ export class RecipesFormComponent implements OnInit {
       //       'amount': new FormControl(item.amount)
       //     })
       //   )
-        
+
       // }
       // let recipeIngredients =  (<FormArray>this.formGroupRecipe.get('ingredients'))
       //  this.formGroupRecipe.setValue({
@@ -50,7 +50,7 @@ export class RecipesFormComponent implements OnInit {
       //   'description': this.recipe.description,
       //   'img': this.recipe.img,
       //   'ingredients': recipeIngredients
-         
+
       //  })
     }
   }
@@ -66,5 +66,8 @@ export class RecipesFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formGroupRecipe)
+    /*let item: RecipesNewModel
+    item = this.formGroupRecipe.value
+    this.recipeService.updateRecipe(item)*/
   }
 }

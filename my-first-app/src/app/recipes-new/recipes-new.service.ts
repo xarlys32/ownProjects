@@ -15,13 +15,20 @@ export class RecipesNewService {
 
     getRecipe(id: number): RecipesNewModel {
         let recipe: RecipesNewModel
-         this.recipes.filter(function(item) {
-            if(item.id == id) {
+        this.recipes.filter(function (item) {
+            if (item.id == id) {
                 recipe = item
             }
         })
         console.log(recipe)
         return recipe
+    }
+
+    updateRecipe(recipe: RecipesNewModel) {
+        let index = this.recipes.findIndex((item) => {
+            item.id == recipe.id
+        })
+        this.recipes[index] = recipe
     }
 
 }
