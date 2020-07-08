@@ -34,7 +34,7 @@ import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-
 import { RecipesNewService } from './recipes-new/recipes-new.service';
 import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -69,7 +69,8 @@ import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.co
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    HttpClientModule
   ],
   providers: [
     DropdownDirective,
