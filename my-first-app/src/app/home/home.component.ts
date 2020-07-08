@@ -8,6 +8,7 @@ import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http'
 })
 export class HomeComponent implements OnInit {
   urlSaludo = "http://localhost:8080/recipes/modeljson"
+  urlList = "http://localhost:8080/recipes/listjson"
   testRest: boolean = true
 
    
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
     if (this.testRest) {
       // this.http.get<String>(this.urlSaludo,{ responseType: 'text' as 'json' }).subscribe(response=> 
       this.http.get<{name: string, surname: string}>(this.urlSaludo).subscribe(response=> 
+        console.log(response))
+      
+      this.http.get<any>(this.urlList).subscribe(response=> 
         console.log(response))
     }
   }
