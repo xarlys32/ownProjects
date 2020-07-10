@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/details/:id', component: RecipesItemComponent },
   { path: 'recipes-new', component: RecipesNewComponent, children:[
+    { path: 'new', component: RecipesFormComponent },
     { path: ':id', component: RecipesDetailv2Component },
     { path: ':id/edit', component: RecipesFormComponent },
   ] },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesNewService } from '../recipes-new.service';
 import { RecipesNewModel } from '../recipes.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'recipes-left-bar',
@@ -10,12 +11,18 @@ import { RecipesNewModel } from '../recipes.model';
 export class RecipesLeftBarComponent implements OnInit {
   private recipesList: RecipesNewModel[]
 
-  constructor(private recipesServices: RecipesNewService) { }
+  constructor(private recipesServices: RecipesNewService, 
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.recipesServices.getRecipes().subscribe((items) => {
       this.recipesList = items
     })
+  }
+
+  onNewRecipe() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

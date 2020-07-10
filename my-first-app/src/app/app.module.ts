@@ -36,6 +36,7 @@ import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    HttpClientModule
   ],
   providers: [
     DropdownDirective,
