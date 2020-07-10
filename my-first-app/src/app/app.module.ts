@@ -37,6 +37,7 @@ import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.co
 import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './authotitation/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { HttpClientModule } from '@angular/common/http';
     RecipesLeftBarComponent,
     RecipesDetailv2Component,
     RecipesFormComponent,
-    PopUpComponent
+    PopUpComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
