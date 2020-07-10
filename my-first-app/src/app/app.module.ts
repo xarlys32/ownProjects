@@ -34,6 +34,7 @@ import { RecipesLeftBarComponent } from './recipes-new/recipes-left-bar/recipes-
 import { RecipesNewService } from './recipes-new/recipes-new.service';
 import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
+import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.co
     RecipesNewComponent,
     RecipesLeftBarComponent,
     RecipesDetailv2Component,
-    RecipesFormComponent
+    RecipesFormComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
