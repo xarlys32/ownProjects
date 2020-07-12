@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-
   showAlert: boolean = false
   constructor() { }
 
@@ -15,6 +14,10 @@ export class AuthComponent implements OnInit {
 
   onAuth() {
     this.showAlert = true
+  }
+
+  onClose(closePopup: boolean) {
+    this.showAlert = false
   }
 
 }

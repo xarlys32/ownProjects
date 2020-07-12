@@ -1,2 +1,2 @@
-<app-pop-up *ngIf="showAlert"></app-pop-up>
-<button class="btn btn-secondary" (click)="onAuth()">Log</button>
+<app-pop-up *ngIf="showAlert" (closeButton)="onClose($event)"></app-pop-up>
+<button class="btn btn-secondary" (click)="onAuth()" >Log</button>

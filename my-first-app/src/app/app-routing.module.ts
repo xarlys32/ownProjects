@@ -15,6 +15,7 @@ import { RecipesNewComponent } from './recipes-new/recipes-new.component';
 import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 import { AuthComponent } from './authotitation/auth/auth.component';
+import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
   },
   { path: 'template_form', component: TemplateFormComponent },
   { path: 'reactive_form', component: ReactiveFormComponent },
-  { path: 'auth', component: AuthComponent }
+  { path: 'auth', component: AuthComponent },
+  { path: 'load', component: LoadComponent}
 ];
 
 @NgModule({

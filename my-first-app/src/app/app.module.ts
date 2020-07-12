@@ -38,6 +38,8 @@ import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './authotitation/auth/auth.component';
+import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
+import { PlaceholderDirective } from './dinamic-components/add-programatically/placeholder/placesholder.directive';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { AuthComponent } from './authotitation/auth/auth.component';
     RecipesDetailv2Component,
     RecipesFormComponent,
     PopUpComponent,
-    AuthComponent
+    AuthComponent,
+    LoadComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
@@ -85,6 +89,9 @@ import { AuthComponent } from './authotitation/auth/auth.component';
     SubjectService,
     RecipesNewService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    PopUpComponent
+  ]
 })
 export class AppModule { }
