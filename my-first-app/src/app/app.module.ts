@@ -40,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { PlaceholderDirective } from './dinamic-components/add-programatically/placeholder/placesholder.directive';
+import { RecipesRoutingModule } from './recipes-new/recipes-routing.module';
 
 @NgModule({
   declarations: [
@@ -64,10 +65,6 @@ import { PlaceholderDirective } from './dinamic-components/add-programatically/p
     RxjsContainerComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
-    RecipesNewComponent,
-    RecipesLeftBarComponent,
-    RecipesDetailv2Component,
-    RecipesFormComponent,
     PopUpComponent,
     AuthComponent,
     LoadComponent,
@@ -86,10 +83,10 @@ import { PlaceholderDirective } from './dinamic-components/add-programatically/p
     IngredientService,
     RecipesService,
     ItemService,
-    SubjectService,
-    RecipesNewService
+    SubjectService
   ],
   bootstrap: [AppComponent],
+  //This is for dynamically added components that are added using ViewContainerRef.createComponent()
   entryComponents: [
     PopUpComponent
   ]

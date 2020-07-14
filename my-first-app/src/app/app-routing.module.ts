@@ -16,22 +16,15 @@ import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
+import { RecipesModule } from './recipes-new/recipes.module';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/details/:id', component: RecipesItemComponent },
-  {
-    path: 'recipes-new', component: RecipesNewComponent, children: [
-      { path: 'new', component: RecipesFormComponent },
-      { path: ':id', component: RecipesDetailv2Component },
-      { path: ':id/edit', component: RecipesFormComponent },
-    ]
-  },
-  {
-    path: 'shopping', component: ShopComponent
-  },
+  { path: 'recipes-new', loadChildren: ()=> import('./recipes-new/recipes.module').then(m=>m.RecipesModule)},
+  { path: 'shopping', component: ShopComponent },
   { path: 'graph', component: GraphComponent },
   { path: 'manage_binding', component: ManageBindingComponent },
   {
