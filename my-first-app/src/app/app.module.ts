@@ -40,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { PlaceholderDirective } from './dinamic-components/add-programatically/placeholder/placesholder.directive';
-import { RecipesRoutingModule } from './recipes-new/recipes-routing.module';
+
+import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -68,7 +71,8 @@ import { RecipesRoutingModule } from './recipes-new/recipes-routing.module';
     PopUpComponent,
     AuthComponent,
     LoadComponent,
-    PlaceholderDirective
+    PlaceholderDirective,
+    AnimationTriggerComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,8 @@ import { RecipesRoutingModule } from './recipes-new/recipes-routing.module';
     FormsModule,
     ReactiveFormsModule,
     NgxChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DropdownDirective,

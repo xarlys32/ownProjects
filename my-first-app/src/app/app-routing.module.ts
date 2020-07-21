@@ -11,12 +11,9 @@ import { ObservableExampleComponent } from './rxjs/observables/observable-exampl
 import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
-import { RecipesNewComponent } from './recipes-new/recipes-new.component';
-import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes-detailv2.component';
-import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
-import { RecipesModule } from './recipes-new/recipes.module';
+import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
 
 
 const routes: Routes = [
@@ -36,7 +33,8 @@ const routes: Routes = [
   { path: 'template_form', component: TemplateFormComponent },
   { path: 'reactive_form', component: ReactiveFormComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'load', component: LoadComponent}
+  { path: 'load', component: LoadComponent},
+  { path: 'animation', component: AnimationTriggerComponent}
 ];
 
 @NgModule({
