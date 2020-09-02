@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
   showAlert: boolean = false
+  @ViewChild("f", {static : false}) form;
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,10 @@ export class AuthComponent implements OnInit {
 
   onClose(closePopup: boolean) {
     this.showAlert = false
+  }
+
+  onSubmit() {
+    console.log(this.form.value);
   }
 
 }
