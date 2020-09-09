@@ -44,6 +44,7 @@ import { PlaceholderDirective } from './dinamic-components/add-programatically/p
 import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { AuthService } from './authotitation/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     IngredientService,
     RecipesService,
     ItemService,
-    SubjectService
+    SubjectService,
+    AuthService
   ],
   bootstrap: [AppComponent],
   //This is for dynamically added components that are added using ViewContainerRef.createComponent()
