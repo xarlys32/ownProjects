@@ -14,6 +14,7 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
+import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'template_form', component: TemplateFormComponent },
   { path: 'reactive_form', component: ReactiveFormComponent },
   { path: 'auth', component: AuthComponent },
+  { path: 'authok', component: AuthOkComponent },
   { path: 'load', component: LoadComponent},
   { path: 'animation', component: AnimationTriggerComponent}
 ];

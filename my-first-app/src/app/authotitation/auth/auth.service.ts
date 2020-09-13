@@ -1,12 +1,25 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { UserAuth } from './user-auth.model';
+
+export interface AuthData {
+  access_token: string,
+  expires_in: number,
+  jti: string,
+  refresh_token: string,
+  scope: string,
+  token_type: string
+}
 
 @Injectable()
 export class AuthService {
     oauth_url = 'oauth/token'
+    userSub = new Subject<UserAuth>()
     constructor(private http: HttpClient) {}
 
-    login(username: string, passwd: string): any {
+    login(username: string, passwd: string) {
         let headers = 
 	      new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
           'Authorization': 'Basic '+btoa("recipes:recipespass")});
@@ -16,8 +29,14 @@ export class AuthService {
           params.append('grant_type','password');
           params.append('client_id','recipes');
           params.append('client_secret','recipespass');
-        this.http.post(this.oauth_url, 
+     return this.http.post<AuthData>(this.oauth_url, 
             params.toString(),
-            {'headers': headers}).subscribe(data => console.log(data), error => console.log("aaaaa" + error))
+            {'headers': headers})
+          .pipe(
+            tap(el =>{
+              const user = new UserAuth(username,'alguno@gmail.com', el.access_token, el.expires_in*1000 )
+              this.userSub.next(user)
+            }))
+          
     }
 }

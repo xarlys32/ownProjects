@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { AuthService, AuthData } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +10,8 @@ import { AuthService } from './auth.service';
 export class AuthComponent implements OnInit {
   showAlert: boolean = false
   @ViewChild("f", {static : false}) form;
-  constructor(private authService: AuthService) { }
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,8 +26,12 @@ export class AuthComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value);
-    let test = this.authService.login(this.form.value.username, this.form.value.password)
-    console.log(test)
+    this.authService.login(this.form.value.username, this.form.value.password)
+      .subscribe(el => {
+        console.log(el)
+        this.router.navigate(['/authok'])
+      })
+    
   }
 
 }

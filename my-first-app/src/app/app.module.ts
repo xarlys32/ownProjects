@@ -45,6 +45,7 @@ import { AnimationTriggerComponent } from './animation/animation-trigger/animati
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AuthService } from './authotitation/auth/auth.service';
+import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { AuthService } from './authotitation/auth/auth.service';
     AuthComponent,
     LoadComponent,
     PlaceholderDirective,
-    AnimationTriggerComponent
+    AnimationTriggerComponent,
+    AuthOkComponent
   ],
   imports: [
     BrowserModule,
