@@ -28,7 +28,6 @@ export class AuthComponent implements OnInit {
     console.log(this.form.value);
     this.authService.login(this.form.value.username, this.form.value.password)
       .subscribe(el => {
-        console.log(el)
         this.router.navigate(['/authok'])
       })
     

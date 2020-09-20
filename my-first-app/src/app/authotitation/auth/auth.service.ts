@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { UserAuth } from './user-auth.model';
 
 export interface AuthData {
@@ -16,7 +16,8 @@ export interface AuthData {
 @Injectable()
 export class AuthService {
     oauth_url = 'oauth/token'
-    userSub = new Subject<UserAuth>()
+    //Con behaviour podemos acceder a los elementos lanzados aunque no nos hallamos suscrito aun
+    userSubject = new BehaviorSubject<UserAuth>(null)
     constructor(private http: HttpClient) {}
 
     login(username: string, passwd: string) {
@@ -35,7 +36,7 @@ export class AuthService {
           .pipe(
             tap(el =>{
               const user = new UserAuth(username,'alguno@gmail.com', el.access_token, el.expires_in*1000 )
-              this.userSub.next(user)
+              this.userSubject.next(user)
             }))
           
     }

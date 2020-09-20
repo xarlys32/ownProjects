@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { AuthService } from '../authotitation/auth/auth.service';
+import { exhaustMap, mergeAll, mergeMap, take } from 'rxjs/operators';
+import { concat, merge } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,23 +10,27 @@ import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  urlSaludo = "http://localhost:8080/recipes/modeljson"
-  urlList = "http://localhost:8080/recipes/listjson"
+  urlSaludo = "/recipes/modeljson"
+  urlList = "/recipes/listjson"
   testRest: boolean = true
+  responseAnswer:string
+  usersResponse:string[] = []
 
-   
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private authService: AuthService) { }
 
   ngOnInit() {
-    if (this.testRest) {
-      // this.http.get<String>(this.urlSaludo,{ responseType: 'text' as 'json' }).subscribe(response=> 
-      this.http.get<{name: string, surname: string}>(this.urlSaludo).subscribe(response=> 
-        console.log(response))
-      
-      this.http.get<any>(this.urlList).subscribe(response=> 
-        console.log(response))
-    }
+    this.authService.userSubject.pipe(take(1), exhaustMap(user => {
+      let params =  new HttpParams().set('access_token', user != null ? user.token: '')
+      return this.http.get<{name: string, surname: string}>(this.urlSaludo, {'params': params})
+    }))
+    .subscribe(user => {
+        if (user != null) {
+          this.responseAnswer = user.name +' '+user.surname
+        }
+    })
   }
+    
+  
 
 }
