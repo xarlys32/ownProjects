@@ -36,7 +36,7 @@ import { RecipesDetailv2Component } from './recipes-new/recipes-detailv2/recipes
 import { RecipesFormComponent } from './recipes-new/recipes-form/recipes-form.component';
 import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { PlaceholderDirective } from './dinamic-components/add-programatically/placeholder/placesholder.directive';
@@ -46,6 +46,8 @@ import { AnimationTriggerComponent } from './animation/animation-trigger/animati
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AuthService } from './authotitation/auth/auth.service';
 import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
+import { AuthInterceptorService } from './authotitation/auth/auth-interceptor.service';
+import { multi } from './graph/data';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,12 @@ import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
     RecipesService,
     ItemService,
     SubjectService,
-    AuthService
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   //This is for dynamically added components that are added using ViewContainerRef.createComponent()

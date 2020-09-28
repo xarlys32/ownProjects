@@ -40,4 +40,9 @@ export class AuthService {
             }))
           
     }
+
+    logout() {
+      this.userSubject.next(null)
+      console.log('Logout??')
+    }
 }

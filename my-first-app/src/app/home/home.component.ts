@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.userSubject.pipe(take(1), exhaustMap(user => {
+    /**this.authService.userSubject.pipe(take(1), exhaustMap(user => {
       let params =  new HttpParams().set('access_token', user != null ? user.token: '')
       return this.http.get<{name: string, surname: string}>(this.urlSaludo, {'params': params})
     }))
@@ -28,7 +28,15 @@ export class HomeComponent implements OnInit {
         if (user != null) {
           this.responseAnswer = user.name +' '+user.surname
         }
-    })
+    })**/
+    this.http.get<{name: string, surname: string}>(this.urlSaludo)
+    .subscribe(user => {
+      if (user != null) {
+        this.responseAnswer = user.name +' '+user.surname
+      } else {
+        this.responseAnswer = 'No response'
+      }
+  })
   }
     
   
