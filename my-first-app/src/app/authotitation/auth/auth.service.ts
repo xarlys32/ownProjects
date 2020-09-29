@@ -18,6 +18,7 @@ export class AuthService {
     oauth_url = 'oauth/token'
     //Con behaviour podemos acceder a los elementos lanzados aunque no nos hallamos suscrito aun
     userSubject = new BehaviorSubject<UserAuth>(null)
+    tokenExpirationTimer: any
     constructor(private http: HttpClient) {}
 
     login(username: string, passwd: string) {
@@ -36,13 +37,41 @@ export class AuthService {
           .pipe(
             tap(el =>{
               const user = new UserAuth(username,'alguno@gmail.com', el.access_token, el.expires_in*1000 )
-              this.userSubject.next(user)
+              //this.userSubject.next(user)
+              localStorage.setItem('userData', JSON.stringify(user))
             }))
           
     }
 
+    autoLogin() {
+      const userStorage: UserAuth = JSON.parse(localStorage.getItem('userData'))
+      console.log(userStorage)
+
+      if (!userStorage) {
+        return
+      }
+
+      if (userStorage.token) {
+        this.userSubject.next(userStorage)
+        const timerExpiration = new Date(userStorage.expirationDate).getTime() - new Date().getTime()
+        this.autoLogout(timerExpiration)
+      }
+      
+    }
+
     logout() {
       this.userSubject.next(null)
+      localStorage.removeItem('userData')
       console.log('Logout??')
+      if (this.tokenExpirationTimer) {
+        clearTimeout()
+      }
+      this.tokenExpirationTimer = null
+    }
+
+    autoLogout(expirationDuration: number) {
+      this.tokenExpirationTimer = setTimeout(()=> {
+        this.logout()
+      }, expirationDuration)
     }
 }
