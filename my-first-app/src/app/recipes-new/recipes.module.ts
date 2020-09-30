@@ -6,18 +6,20 @@ import { RecipesFormComponent } from './recipes-form/recipes-form.component';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipesNewService } from './recipes-new.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
     declarations: [
         RecipesNewComponent,
         RecipesLeftBarComponent,
         RecipesDetailv2Component,
-        RecipesFormComponent,
+        RecipesFormComponent
     ],
     imports: [
         RecipesRoutingModule,
         FormsModule,
         ReactiveFormsModule,
+        NgxChartsModule
     ],
     providers: [
         RecipesNewService

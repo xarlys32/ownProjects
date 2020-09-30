@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./recipes-left-bar.component.css']
 })
 export class RecipesLeftBarComponent implements OnInit {
-  private recipesList: RecipesNewModel[]
+  public recipesList: RecipesNewModel[]
 
   constructor(private recipesServices: RecipesNewService, 
     private router: Router,

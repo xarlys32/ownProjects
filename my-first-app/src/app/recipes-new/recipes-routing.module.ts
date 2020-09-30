@@ -5,7 +5,7 @@ import { RecipesDetailv2Component } from './recipes-detailv2/recipes-detailv2.co
 import { RouterModule } from '@angular/router';
 const routes = [
     {
-        path: 'recipes-new', component: RecipesNewComponent, children: [
+        path: '', component: RecipesNewComponent, children: [
           { path: 'new', component: RecipesFormComponent },
           { path: ':id', component: RecipesDetailv2Component },
           { path: ':id/edit', component: RecipesFormComponent },
@@ -13,7 +13,8 @@ const routes = [
       }
 ]
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+  //IMPORTANTE usar forChild NO forRoutes
+  imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
 export class RecipesRoutingModule {}
