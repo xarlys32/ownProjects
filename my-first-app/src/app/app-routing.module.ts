@@ -15,13 +15,14 @@ import { AuthComponent } from './authotitation/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
 import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
+import { AuthGuard } from './authotitation/auth/auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipes', component: RecipesListComponent },
   { path: 'recipes/details/:id', component: RecipesItemComponent },
-  { path: 'recipes-new', loadChildren: ()=> import('./recipes-new/recipes.module').then(m=>m.RecipesModule)},
+  { path: 'recipes-new', canActivate: [AuthGuard], loadChildren: () => import('./recipes-new/recipes.module').then(m => m.RecipesModule) },
   { path: 'shopping', component: ShopComponent },
   { path: 'graph', component: GraphComponent },
   { path: 'manage_binding', component: ManageBindingComponent },
@@ -35,8 +36,8 @@ const routes: Routes = [
   { path: 'reactive_form', component: ReactiveFormComponent },
   { path: 'auth', component: AuthComponent },
   { path: 'authok', component: AuthOkComponent },
-  { path: 'load', component: LoadComponent},
-  { path: 'animation', component: AnimationTriggerComponent}
+  { path: 'load', component: LoadComponent },
+  { path: 'animation', component: AnimationTriggerComponent }
 ];
 
 @NgModule({
