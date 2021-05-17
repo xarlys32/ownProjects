@@ -1,0 +1,21 @@
+<div class="container">
+    <button class="btn btn-info" (click)="onTrigger()">Trigger</button>
+    <button class="btn btn-info" (click)="onWild()">Wild</button>
+    <div style="width: 100px; height: 100px;" [@divState]="state"></div>
+    <br>
+    <div style="width: 100px; height: 100px;" 
+        [@wildState]="wildState"
+        (@wildState.start)="onAnimationStart($event)"
+    ></div>
+    <hr>
+    <div>
+        <input type="text" [(ngModel)]="cosa"/><button class="btn btn-light" (click)="onAdd()">Add</button>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" [@list1] *ngFor="let item of list">{{item}}</li>
+    </ul>
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item" [@list2] *ngFor="let item of list">{{item}}</li>
+    </ul>
+</div>

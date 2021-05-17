@@ -1,0 +1,21 @@
+<div class="container"><app-pop-up *ngIf="showAlert" (closeButton)="onClose($event)"></app-pop-up>
+<button class="btn btn-secondary" (click)="onAuth()" >Log</button>
+<div class="row">
+    <div class="col-xs-12">
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" ngModel/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" class="form-control" ngModel/>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-info">Submit</button> |
+                <button type="button" class="btn btn-danger" (click)="onLogout()">Logout</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

@@ -1,0 +1,4 @@
+<p *ngIf="!isEmitted">Subject subscribe but not emitted!</p>
+<p *ngIf="isEmitted">Subject subscribe and now is emitted!</p>
+
+<button (click)="onActivate()" class="btn btn-info">Activate</button>
