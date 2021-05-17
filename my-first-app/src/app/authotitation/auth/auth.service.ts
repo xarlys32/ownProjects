@@ -37,8 +37,9 @@ export class AuthService {
           .pipe(
             tap(el =>{
               const user = new UserAuth(username,'alguno@gmail.com', el.access_token, el.expires_in*1000 )
-              //this.userSubject.next(user)
+              this.userSubject.next(user)
               localStorage.setItem('userData', JSON.stringify(user))
+              console.log(el.expires_in)
             }))
           
     }
@@ -53,7 +54,9 @@ export class AuthService {
 
       if (userStorage.token) {
         this.userSubject.next(userStorage)
-        const timerExpiration = new Date(userStorage.expirationDate).getTime() - new Date().getTime()
+        //const timerExpiration = new Date(userStorage.expirationDate).getTime() - new Date().getTime()
+        const timerExpiration = new Date(userStorage.expirationDate).getTime()
+        console.log(new Date(userStorage.expirationDate).getTime())
         this.autoLogout(timerExpiration)
       }
       
@@ -70,6 +73,7 @@ export class AuthService {
     }
 
     autoLogout(expirationDuration: number) {
+      console.log(expirationDuration)
       this.tokenExpirationTimer = setTimeout(()=> {
         this.logout()
       }, expirationDuration)
