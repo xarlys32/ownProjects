@@ -12,7 +12,7 @@ export class ShopComponent implements OnInit {
   items: ItemModel[] = []
   editMode: boolean = false
   editItem: number
-  @ViewChild('f', { static: false }) f: NgForm
+  @ViewChild('f') f: NgForm
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {

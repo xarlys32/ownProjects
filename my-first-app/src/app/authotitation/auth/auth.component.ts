@@ -9,7 +9,7 @@ import { AuthService, AuthData } from './auth.service';
 })
 export class AuthComponent implements OnInit {
   showAlert: boolean = false
-  @ViewChild("f", {static : false}) form;
+  @ViewChild("f") form;
 
   constructor(private authService: AuthService, private router: Router) { }
 

@@ -1,4 +1,4 @@
-import { Directive, HostBinding, HostListener, ElementRef, Renderer } from '@angular/core';
+import { Directive, HostBinding, HostListener, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appDropdown]'
@@ -9,12 +9,12 @@ export class DropdownDirective {
   @HostListener('click') mouseClick() {
     this.active = !this.active
     if (this.active) {
-      this.renderer.setElementClass(this.el.nativeElement.lastElementChild, 'show', true);
+      this.renderer.addClass(this.el.nativeElement.lastElementChild, 'show');
     } else {
-      this.renderer.setElementClass(this.el.nativeElement.lastElementChild, 'show', false);
+      this.renderer.removeClass(this.el.nativeElement.lastElementChild, 'show');
     }
     //this.el.nativeElement.lastElementChild.classList.push("show")
   }
-  constructor(private el: ElementRef, private renderer: Renderer) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
 }

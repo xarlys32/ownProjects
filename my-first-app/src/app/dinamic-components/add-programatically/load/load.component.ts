@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./load.component.css']
 })
 export class LoadComponent implements OnInit {
-  @ViewChild(PlaceholderDirective, {static: false}) popupHost
+  @ViewChild(PlaceholderDirective) popupHost
 
   popupSub: Subscription
 

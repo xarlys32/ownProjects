@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent implements OnInit {
-  @ViewChild('f', {static: false}) form: NgForm
+  @ViewChild('f') form: NgForm
   constructor() { }
 
   ngOnInit() {
