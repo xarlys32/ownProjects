@@ -9,11 +9,11 @@ import { ObservableExampleComponent } from './rxjs/observables/observable-exampl
 import { SubjectExampleComponent } from './rxjs/subjects/subject-example/subject-example.component';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
-import { AuthComponent } from './authotitation/auth/auth.component';
+import { AuthComponent } from './auth/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
-import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
-import { AuthGuard } from './authotitation/auth/auth.guard';
+import { AuthOkComponent } from './auth/auth-ok/auth-ok.component';
+import { AuthGuard } from './auth/auth/auth.guard';
 
 
 const routes: Routes = [

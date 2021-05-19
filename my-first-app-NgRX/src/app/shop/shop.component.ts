@@ -5,7 +5,7 @@ import { ItemService } from './item.service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AddIngredient, DeleteIngredient, EditIngredient } from './store/shop.actions';
-import * as fromShoppingListReducer from './store/shop.reducer';
+import * as fromApp from '../store/app.reducer';
 
 @Component({
   selector: 'app-shop',
@@ -19,10 +19,10 @@ export class ShopComponent implements OnInit {
   editItem: number
   @ViewChild('f', { static: false }) f: NgForm
   constructor(private itemService: ItemService,
-    private store: Store<fromShoppingListReducer.State>) { }
+    private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
-    this.items = this.store.select("shopListState")
+    this.items = this.store.select("shopList");
     /*this.itemService.getListItem().subscribe(item => {
       this.items = item
     })*/

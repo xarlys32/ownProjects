@@ -48,6 +48,7 @@ import { AuthService } from './authotitation/auth/auth.service';
 import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
 import { AuthInterceptorService } from './authotitation/auth/auth-interceptor.service';
 import { multi } from './graph/data';
+import { DataGridModule } from './datagrid/datagrid.module';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { multi } from './graph/data';
     ReactiveFormsModule,
     NgxChartsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataGridModule
   ],
   providers: [
     DropdownDirective,

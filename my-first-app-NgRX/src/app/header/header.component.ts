@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DropdownDirective } from '../directives/dropdown.directive';
-import { AuthService } from '../authotitation/auth/auth.service';
-import { UserAuth } from '../authotitation/auth/user-auth.model';
+import { AuthService } from '../auth/auth/auth.service';
+import { UserAuth } from '../auth/auth/user-auth.model';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +11,13 @@ import { UserAuth } from '../authotitation/auth/user-auth.model';
 })
 export class HeaderComponent implements OnInit {
   userSub = new Subscription
-  private userAuth:UserAuth
+  private userAuth: UserAuth
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.userSub = this.authService.userSubject.subscribe(user =>
-        this.userAuth = user
-      )
+      this.userAuth = user
+    )
   }
 
 }

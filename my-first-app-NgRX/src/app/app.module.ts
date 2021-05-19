@@ -26,18 +26,19 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
 import { PopUpComponent } from './dinamic-components/pop-up/pop-up.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthComponent } from './authotitation/auth/auth.component';
+import { AuthComponent } from './auth/auth/auth.component';
 import { LoadComponent } from './dinamic-components/add-programatically/load/load.component';
 import { PlaceholderDirective } from './dinamic-components/add-programatically/placeholder/placesholder.directive';
 
 import { AnimationTriggerComponent } from './animation/animation-trigger/animation-trigger.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { AuthService } from './authotitation/auth/auth.service';
-import { AuthOkComponent } from './authotitation/auth-ok/auth-ok.component';
-import { AuthInterceptorService } from './authotitation/auth/auth-interceptor.service';
+import { AuthService } from './auth/auth/auth.service';
+import { AuthOkComponent } from './auth/auth-ok/auth-ok.component';
+import { AuthInterceptorService } from './auth/auth/auth-interceptor.service';
 import { StoreModule } from '@ngrx/store';
 import { shoppingListReducer } from './shop/store/shop.reducer';
+import * as fromAppReducer from './store/app.reducer'
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { shoppingListReducer } from './shop/store/shop.reducer';
     NgxChartsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ shopListState: shoppingListReducer })
+    StoreModule.forRoot(fromAppReducer.appReducer)
   ],
   providers: [
     DropdownDirective,
